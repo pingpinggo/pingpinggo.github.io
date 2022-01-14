@@ -275,10 +275,10 @@
 <td>远程代码仓库</td>
 </tr>
 <tr>
-<td>git init</td>
-<td>git add</td>
-<td>git commit</td>
-<td>git push</td>
+<td><code>git init</code></td>
+<td><code>git add</code></td>
+<td><code>git commit</code></td>
+<td><code>git push</code></td>
 </tr>
 </tbody></table>
 <ul>
@@ -304,7 +304,7 @@
 </li>
 <li>注：<ol>
 <li>更改–&gt;重复上述命令</li>
-<li>也可直接修改 <code>C:\\Users\\用户\\.gitconfig</code></li>
+<li>也可直接修改 <code>C:\Users\用户\.gitconfig</code></li>
 </ol>
 </li>
 </ol>
@@ -378,7 +378,7 @@
 </li>
 </ul>
 <h2 id="三、远程仓库基本操作"><a href="#三、远程仓库基本操作" class="headerlink" title="三、远程仓库基本操作"></a>三、远程仓库基本操作</h2><h3 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h3><ul>
-<li><code>**git push**</code></li>
+<li><code>git push</code></li>
 </ul>
 <blockquote>
 <p>提交到线上仓库</p>
@@ -392,7 +392,7 @@
 </ol>
 </blockquote>
 <ul>
-<li><code>**git remote**</code></li>
+<li><code>git remote</code></li>
 </ul>
 <blockquote>
 <ol>
@@ -404,7 +404,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; **本地仓库上的操作**</span><br><span class="line">&gt; </span><br><span class="line">&gt; 1. 查看本地仓库关联的远程仓库：`git remote`；在克隆完每个远程仓库后，远程仓库默认为`origin`;加上`v`的参数后，会显示远程仓库的`url`地址；</span><br><span class="line">&gt; 2. 添加远程仓库，一般会取一个简短的别名：`git remote add [remote-name] [url]`，比如：`git remote add example git://github.com/example/example.git`;</span><br><span class="line">&gt; 3. 从远程仓库中抓取本地仓库中没有的更新：`git fetch [remote-name]`，如`git fetch origin`;使用 fetch 只是将远端数据拉到本地仓库，并不自动合并到当前工作分支，只能人工合并。如果设置了某个分支关联到远程仓库的某个分支的话，可以使用`git pull`来拉去远程分支的数据，然后将远端分支自动合并到本地仓库中的当前分支；</span><br><span class="line">&gt; 4. 将本地仓库某分支推送到远程仓库上：`git push [remote-name] [branch-name]`，如`git push origin master`；如果想将本地分支推送到远程仓库的不同名分支：`git push :`，如`git push origin serverfix:awesomebranch`;如果想删除远程分支：`git push [romote-name] :`，如`git push origin :serverfix`。这里省略了本地分支，也就相当于将空白内容推送给远程分支，就等于删掉了远程分支。</span><br><span class="line">&gt; 5. 查看远程仓库的详细信息：`git remote show origin`；</span><br><span class="line">&gt; 6. 修改某个远程仓库在本地的简称：`git remote rename [old-name] [new-name]`，如`git remote rename origin org`；</span><br><span class="line">&gt; 7. 移除远程仓库：`git remote rm [remote-name]`；</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="拉取仓库"><a href="#拉取仓库" class="headerlink" title="拉取仓库"></a><strong>拉取仓库</strong></h3><ul>
-<li><code>**git clone**</code></li>
+<li><code>git clone</code></li>
 </ul>
 <blockquote>
 <p>克隆仓库</p>
@@ -413,7 +413,7 @@
 </ul>
 </blockquote>
 <ul>
-<li><code>**git pull**</code></li>
+<li><code>git pull</code></li>
 </ul>
 <blockquote>
 <p>拉取远程仓库中最新版本</p>
@@ -454,8 +454,60 @@
 </li>
 <li><p><code>git merge 来源分支</code> 合并分支</p>
 </li>
-<li><p>```<br>git branch -d 分支名称</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   删除分支（分支合并后才允许被删除）（-D 大写强制删除）</span><br><span class="line"></span><br><span class="line">  - `git push origin :branch-name` : 远程仓库同步删除掉的分支</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">开发分支文件后要 `commit` 后再切换主分支，否则分支文件会出现在主分支里面。</span><br><span class="line"></span><br><span class="line">&gt; 分支管理</span><br><span class="line">&gt;</span><br><span class="line">&gt; 1. 创建分支：`git branch` ，如`git branch testing`；</span><br><span class="line">&gt; 2. 从当前所处的分支切换到其他分支：`git checkout` ，如`git checkout testing`；</span><br><span class="line">&gt; 3. 新建并切换到新建分支上：`git checkout -b` ;</span><br><span class="line">&gt; 4. 删除分支：`git branch -d` ；</span><br><span class="line">&gt; 5. 将当前分支与指定分支进行合并：`git merge` ;</span><br><span class="line">&gt; 6. 显示本地仓库的所有分支：`git branch`;</span><br><span class="line">&gt; 7. 查看各个分支最后一个提交对象的信息：`git branch -v`;</span><br><span class="line">&gt; 8. 查看哪些分支已经合并到当前分支：`git branch --merged`;</span><br><span class="line">&gt; 9. 查看当前哪些分支还没有合并到当前分支：`git branch --no-merged`;</span><br><span class="line">&gt; 10. 把远程分支合并到当前分支：`git merge /`，如`git merge origin/serverfix`；如果是单线的历史分支不存在任何需要解决的分歧，只是简单的将 HEAD 指针前移，所以这种合并过程可以称为快进（Fast forward），而如果是历史分支是分叉的，会以当前分叉的两个分支作为两个祖先，创建新的提交对象；如果在合并分支时，遇到合并冲突需要人工解决后，再才能提交；</span><br><span class="line">&gt; 11. 在远程分支的基础上创建新的本地分支`：git checkout -b /`，如`git checkout -b serverfix origin/serverfix`;</span><br><span class="line">&gt; 12. 从远程分支 checkout 出来的本地分支，称之为跟踪分支。在跟踪分支上向远程分支上推送内容：`git push`。该命令会自动判断应该向远程仓库中的哪个分支推送数据；在跟踪分支上合并远程分支：`git pull`；</span><br><span class="line">&gt; 13. 将一个分支里提交的改变移到基底分支上重放一遍：`git rebase` ，如`git rebase master server`，将特性分支 server 提交的改变在基底分支 master 上重演一遍；使用 rebase 操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用`-onto`操作：`git rebase --onto` ，如`git rebase --onto master server client`；使用 rebase 操作应该遵循的原则是：**一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行 rebase 操作**；</span><br><span class="line"></span><br><span class="line">### **暂时保存更改**</span><br><span class="line"></span><br><span class="line">git 中可以不提交更改，只提取分支上所有改动并储存，让开发人员得到一个干净的副本，临时转向其它工作。复制到“剪切板”，可以“粘贴“到其它分支。</span><br><span class="line"></span><br><span class="line">场景：</span><br><span class="line"></span><br><span class="line">- 储存临时改动：`git stash`</span><br><span class="line">- 恢复临时改动：`git stash pop`</span><br><span class="line"></span><br><span class="line">### **打标签**</span><br><span class="line"></span><br><span class="line">&gt; Git 使用的标签有两种类型：轻量级的（lightweight）和含附注的（annotated）。轻量级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，电子邮件地址和日期，以及标签说明，标签本身也允许使用 GNU Privacy Guard (GPG) 来签署或验证。一般我们都建议使用含附注型的标签，以便保留相关信息；当然，如果只是临时性加注标签，或者不需要旁注额外信息，用轻量级标签也没问题。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 1. 列出现在所有的标签：`git tag`;</span><br><span class="line">&gt; 2. 使用特定的搜索模式列出符合条件的标签，例如只对 1.4.2 系列的版本感兴趣：`git tag -l &quot;v1.4.2.*&quot;`;</span><br><span class="line">&gt; 3. 创建一个含附注类型的标签，需要加`a`参数，如`git tag -a v1.4 -m &quot;my version 1.4&quot;`;</span><br><span class="line">&gt; 4. 使用 git show 命令查看相应标签的版本信息，并连同显示打标签时的提交对象：`git show v1.4`;</span><br><span class="line">&gt; 5. 如果有自己的私钥，可以使用 GPG 来签署标签，只需要在命令中使用`s`参数：`git tag -s v1.5 -m &quot;my signed 1.5 tag&quot;`;</span><br><span class="line">&gt; 6. 验证已签署的标签：git tag -v ，如`git tag -v v1.5`;</span><br><span class="line">&gt; 7. 创建一个轻量级标签的话，就直接使用 git tag 命令即可，连`a`,`s`以及`m`选项都不需要，直接给出标签名字即可，如`git tag v1.5`;</span><br><span class="line">&gt; 8. 将标签推送到远程仓库中：git push origin ，如`git push origin v1.5`；</span><br><span class="line">&gt; 9. 将本地所有的标签全部推送到远程仓库中：`git push origin --tags`;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 五、**Git 忽略清单**</span><br><span class="line"></span><br><span class="line">将不需要的文件名字添加到此文件中，执行 git 命令时就会忽略这些文件。</span><br><span class="line"></span><br><span class="line">- git 忽略清单文件名称：`.gitignore`</span><br><span class="line"></span><br><span class="line">- 将工作目录所有文件添加到缓存区： `git add .`</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br><span class="line">  ```yaml</span><br><span class="line">  # 此为注释 – 将被 Git 忽略</span><br><span class="line">  # 忽略所有 .a 结尾的文件</span><br><span class="line">  *.a</span><br><span class="line">  # 但 lib.a 除外</span><br><span class="line">  !lib.a</span><br><span class="line">  # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">  /TODO</span><br><span class="line">  # 忽略 build/ 目录下的所有文件</span><br><span class="line">  build/</span><br><span class="line">  # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br><span class="line">  doc/*.txt</span><br><span class="line">  # 忽略 doc/ 目录下所有扩展名为 txt 的文件</span><br><span class="line">  doc/**/*.txt</span><br></pre></td></tr></table></figure></li>
+<li><p><code>git branch -d 分支名称</code> 删除分支（分支合并后才允许被删除）（-D 大写强制删除）</p>
+<ul>
+<li><code>git push origin :branch-name</code> : 远程仓库同步删除掉的分支</li>
+</ul>
+</li>
+</ul>
+<p>注意：</p>
+<p>开发分支文件后要 <code>commit</code> 后再切换主分支，否则分支文件会出现在主分支里面。</p>
+<blockquote>
+<p>分支管理</p>
+<ol>
+<li>创建分支：<code>git branch</code> ，如<code>git branch testing</code>；</li>
+<li>从当前所处的分支切换到其他分支：<code>git checkout</code> ，如<code>git checkout testing</code>；</li>
+<li>新建并切换到新建分支上：<code>git checkout -b</code> ;</li>
+<li>删除分支：<code>git branch -d</code> ；</li>
+<li>将当前分支与指定分支进行合并：<code>git merge</code> ;</li>
+<li>显示本地仓库的所有分支：<code>git branch</code>;</li>
+<li>查看各个分支最后一个提交对象的信息：<code>git branch -v</code>;</li>
+<li>查看哪些分支已经合并到当前分支：<code>git branch --merged</code>;</li>
+<li>查看当前哪些分支还没有合并到当前分支：<code>git branch --no-merged</code>;</li>
+<li>把远程分支合并到当前分支：<code>git merge /</code>，如<code>git merge origin/serverfix</code>；如果是单线的历史分支不存在任何需要解决的分歧，只是简单的将 HEAD 指针前移，所以这种合并过程可以称为快进（Fast forward），而如果是历史分支是分叉的，会以当前分叉的两个分支作为两个祖先，创建新的提交对象；如果在合并分支时，遇到合并冲突需要人工解决后，再才能提交；</li>
+<li>在远程分支的基础上创建新的本地分支<code>：git checkout -b /</code>，如<code>git checkout -b serverfix origin/serverfix</code>;</li>
+<li>从远程分支 checkout 出来的本地分支，称之为跟踪分支。在跟踪分支上向远程分支上推送内容：<code>git push</code>。该命令会自动判断应该向远程仓库中的哪个分支推送数据；在跟踪分支上合并远程分支：<code>git pull</code>；</li>
+<li>将一个分支里提交的改变移到基底分支上重放一遍：<code>git rebase</code> ，如<code>git rebase master server</code>，将特性分支 server 提交的改变在基底分支 master 上重演一遍；使用 rebase 操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用<code>-onto</code>操作：<code>git rebase --onto</code> ，如<code>git rebase --onto master server client</code>；使用 rebase 操作应该遵循的原则是：<strong>一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行 rebase 操作</strong>；</li>
+</ol>
+</blockquote>
+<h3 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a><strong>暂时保存更改</strong></h3><p>git 中可以不提交更改，只提取分支上所有改动并储存，让开发人员得到一个干净的副本，临时转向其它工作。复制到“剪切板”，可以“粘贴“到其它分支。</p>
+<p>场景：</p>
+<ul>
+<li>储存临时改动：<code>git stash</code></li>
+<li>恢复临时改动：<code>git stash pop</code></li>
+</ul>
+<h3 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a><strong>打标签</strong></h3><blockquote>
+<p>Git 使用的标签有两种类型：轻量级的（lightweight）和含附注的（annotated）。轻量级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，电子邮件地址和日期，以及标签说明，标签本身也允许使用 GNU Privacy Guard (GPG) 来签署或验证。一般我们都建议使用含附注型的标签，以便保留相关信息；当然，如果只是临时性加注标签，或者不需要旁注额外信息，用轻量级标签也没问题。</p>
+<ol>
+<li>列出现在所有的标签：<code>git tag</code>;</li>
+<li>使用特定的搜索模式列出符合条件的标签，例如只对 1.4.2 系列的版本感兴趣：<code>git tag -l &quot;v1.4.2.*&quot;</code>;</li>
+<li>创建一个含附注类型的标签，需要加<code>a</code>参数，如<code>git tag -a v1.4 -m &quot;my version 1.4&quot;</code>;</li>
+<li>使用 git show 命令查看相应标签的版本信息，并连同显示打标签时的提交对象：<code>git show v1.4</code>;</li>
+<li>如果有自己的私钥，可以使用 GPG 来签署标签，只需要在命令中使用<code>s</code>参数：<code>git tag -s v1.5 -m &quot;my signed 1.5 tag&quot;</code>;</li>
+<li>验证已签署的标签：git tag -v ，如<code>git tag -v v1.5</code>;</li>
+<li>创建一个轻量级标签的话，就直接使用 git tag 命令即可，连<code>a</code>,<code>s</code>以及<code>m</code>选项都不需要，直接给出标签名字即可，如<code>git tag v1.5</code>;</li>
+<li>将标签推送到远程仓库中：git push origin ，如<code>git push origin v1.5</code>；</li>
+<li>将本地所有的标签全部推送到远程仓库中：<code>git push origin --tags</code>;</li>
+</ol>
+</blockquote>
+<h3 id="五、Git-忽略清单"><a href="#五、Git-忽略清单" class="headerlink" title="五、Git 忽略清单"></a>五、<strong>Git 忽略清单</strong></h3><p>将不需要的文件名字添加到此文件中，执行 git 命令时就会忽略这些文件。</p>
+<ul>
+<li><p>git 忽略清单文件名称：<code>.gitignore</code></p>
+</li>
+<li><p>将工作目录所有文件添加到缓存区： <code>git add .</code></p>
+</li>
+<li><p>例子：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此为注释 – 将被 Git 忽略</span></span><br><span class="line"><span class="comment"># 忽略所有 .a 结尾的文件</span></span><br><span class="line"><span class="string">*.a</span></span><br><span class="line"><span class="comment"># 但 lib.a 除外</span></span><br><span class="line"><span class="type">!lib.a</span></span><br><span class="line"><span class="comment"># 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span></span><br><span class="line"><span class="string">/TODO</span></span><br><span class="line"><span class="comment"># 忽略 build/ 目录下的所有文件</span></span><br><span class="line"><span class="string">build/</span></span><br><span class="line"><span class="comment"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span></span><br><span class="line"><span class="string">doc/*.txt</span></span><br><span class="line"><span class="comment"># 忽略 doc/ 目录下所有扩展名为 txt 的文件</span></span><br><span class="line"><span class="string">doc/**/*.txt</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
